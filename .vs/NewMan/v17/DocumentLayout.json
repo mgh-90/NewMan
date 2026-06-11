@@ -1,0 +1,166 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MyGame\\NewMan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|c:\\mygame\\newman\\assets\\scripts\\helditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\helditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|c:\\mygame\\newman\\assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|C:\\MyGame\\NewMan\\assets\\scripts\\hotbarselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hotbarselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|C:\\MyGame\\NewMan\\assets\\scripts\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|C:\\MyGame\\NewMan\\assets\\scripts\\inventorytoggle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventorytoggle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|C:\\MyGame\\NewMan\\assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|C:\\MyGame\\NewMan\\assets\\scripts\\pickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|C:\\MyGame\\NewMan\\assets\\scripts\\crafting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\crafting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|C:\\MyGame\\NewMan\\assets\\scripts\\mouselook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00536FD1-DEC7-A7CC-DAE3-67B2B000664B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mouselook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HeldItem.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\HeldItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HeldItem.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\HeldItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HeldItem.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAAFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T15:33:36.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HotbarSelector.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\HotbarSelector.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HotbarSelector.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\HotbarSelector.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HotbarSelector.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T14:29:50.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InventoryUI.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\InventoryUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InventoryUI.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\InventoryUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InventoryUI.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T14:27:46.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Crafting.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Crafting.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Crafting.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Crafting.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Crafting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T12:35:35.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Inventory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T11:54:15.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Pickup.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Pickup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Pickup.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Pickup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Pickup.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwDkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T11:33:24.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MouseLook.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\MouseLook.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MouseLook.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\MouseLook.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MouseLook.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T10:57:19.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Movement.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Movement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Movement.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\Movement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Movement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T10:55:31.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InventoryToggle.cs",
+              "DocumentMoniker": "C:\\MyGame\\NewMan\\Assets\\Scripts\\InventoryToggle.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InventoryToggle.cs",
+              "ToolTip": "C:\\MyGame\\NewMan\\Assets\\Scripts\\InventoryToggle.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InventoryToggle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T15:00:28.152Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
