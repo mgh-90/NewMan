@@ -6,3 +6,4 @@
 /Build/
 *.csproj
 *.sln
+.vs/

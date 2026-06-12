@@ -3,51 +3,53 @@ using System.Collections.Generic;
 
 public class HotbarSelector : MonoBehaviour
 {
-    public int selectedSlot = 0;
+    public int selectedSlot = -1;  // -1 یعنی هیچ اسلاتی انتخاب نشده
     private InventoryUI inventoryUI;
 
-    void Start()
-    {
-        inventoryUI = FindObjectOfType<InventoryUI>();
-    }
+    void Start() => inventoryUI = FindObjectOfType<InventoryUI>();
 
     void Update()
     {
         if (inventoryUI == null) return;
-        List<GameObject> hotbarSlots = inventoryUI.currentHotbarSlots;
+        List<GameObject> hotbarSlots = inventoryUI.GetHotbarSlots();
+        if (hotbarSlots == null) return;
 
-        // انتخاب با کلیدهای 1 تا 9
+        // کلیدهای 1 تا 9
         for (int i = 0; i < 9; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                if (i < hotbarSlots.Count)
+                if (selectedSlot == i)
+                {
+                    // اگر همان اسلات دوباره زده شد، آن را deselect کن
+                    selectedSlot = -1;
+                }
+                else
                 {
                     selectedSlot = i;
-                    Debug.Log($"Selected slot {selectedSlot + 1}");
                 }
                 break;
             }
         }
 
-        // انتخاب با چرخ ماوس
+        // اسکرول ماوس: اگر اسکرول کرد، همیشه یک اسلات انتخاب می‌شود (حتی اگر قبلاً -1 بود)
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
         {
-            int newSlot = selectedSlot - (int)Mathf.Sign(scroll);
-            if (newSlot >= 0 && newSlot < hotbarSlots.Count)
+            if (selectedSlot == -1)
+                selectedSlot = 0; // اگر هیچی انتخاب نبود، اولین اسلات رو انتخاب کن
+            else
             {
-                selectedSlot = newSlot;
-                Debug.Log($"Selected slot {selectedSlot + 1}");
+                int newSlot = selectedSlot - (int)Mathf.Sign(scroll);
+                if (newSlot >= 0 && newSlot < 9) selectedSlot = newSlot;
             }
         }
     }
 
     void LateUpdate()
     {
-        // بعد از اینکه InventoryUI اسلات‌ها را بازسازی کرد، هایلایت را به‌روز می‌کنیم
         if (inventoryUI == null) return;
-        List<GameObject> hotbarSlots = inventoryUI.currentHotbarSlots;
+        List<GameObject> hotbarSlots = inventoryUI.GetHotbarSlots();
         if (hotbarSlots == null || hotbarSlots.Count == 0) return;
 
         for (int i = 0; i < hotbarSlots.Count; i++)

@@ -7,69 +7,61 @@ public class InventoryUI : MonoBehaviour
 {
     public GameObject hotbarSlotPrefab;
     public Transform hotbarParent;
-    public GameObject inventorySlotPrefab;
-    public Transform inventoryParent;
     public Inventory inventory;
     public int hotbarSize = 9;
 
-    public List<GameObject> currentHotbarSlots = new List<GameObject>();
-    public List<GameObject> currentInventorySlots = new List<GameObject>();
+    private List<GameObject> hotbarSlots = new List<GameObject>();
+    private List<TextMeshProUGUI> amountTexts = new List<TextMeshProUGUI>();
+    private List<Image> icons = new List<Image>();
 
     void Start()
     {
         if (inventory == null)
             inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        RefreshUI();
+        CreateHotbarSlots();
     }
 
-    void Update()
+    void CreateHotbarSlots()
     {
-        // برای سادگی هر فریم به‌روز می‌شود. بعداً می‌توانید بهینه کنید.
-        RefreshUI();
-    }
+        foreach (var slot in hotbarSlots) Destroy(slot);
+        hotbarSlots.Clear();
+        amountTexts.Clear();
+        icons.Clear();
 
-    void RefreshUI()
-    {
-        ClearSlots();
-
-        var itemsList = new List<KeyValuePair<string, int>>(inventory.items);
-
-        // ===== نوار ابزار (هاتبار): ۹ آیتم اول =====
-        for (int i = 0; i < hotbarSize && i < itemsList.Count; i++)
+        for (int i = 0; i < hotbarSize; i++)
         {
-            CreateSlot(hotbarSlotPrefab, hotbarParent, itemsList[i], currentHotbarSlots);
-        }
+            GameObject slot = Instantiate(hotbarSlotPrefab, hotbarParent);
+            slot.transform.SetParent(hotbarParent, false);
+            hotbarSlots.Add(slot);
 
-        // ===== پنل اینونتوری: همه آیتم‌ها =====
-        for (int i = 0; i < itemsList.Count; i++)
-        {
-            CreateSlot(inventorySlotPrefab, inventoryParent, itemsList[i], currentInventorySlots);
+            Transform amountTransform = slot.transform.Find("AmountText");
+            Transform iconTransform = slot.transform.Find("Icon");
+            amountTexts.Add(amountTransform?.GetComponent<TextMeshProUGUI>());
+            icons.Add(iconTransform?.GetComponent<Image>());
         }
     }
 
-    void CreateSlot(GameObject prefab, Transform parent, KeyValuePair<string, int> item, List<GameObject> slotList)
+    void Update() => UpdateUI();
+
+    void UpdateUI()
     {
-        GameObject slot = Instantiate(prefab, parent);
-        slot.transform.SetParent(parent, false);
-
-        // تنظیم آیکون (فعلاً رنگ سبز)
-        Transform icon = slot.transform.Find("Icon");
-        if (icon != null)
-            icon.GetComponent<Image>().color = Color.green;
-
-        // تنظیم تعداد
-        Transform amountText = slot.transform.Find("AmountText");
-        if (amountText != null)
-            amountText.GetComponent<TextMeshProUGUI>().text = item.Value.ToString();
-
-        slotList.Add(slot);
+        for (int i = 0; i < hotbarSize; i++)
+        {
+            var slot = inventory.GetSlot(i);
+            bool hasItem = slot != null && !string.IsNullOrEmpty(slot.itemName) && slot.amount > 0;
+            if (hasItem)
+            {
+                if (amountTexts[i] != null) amountTexts[i].text = slot.amount.ToString();
+                if (icons[i] != null) icons[i].color = Color.green;
+            }
+            else
+            {
+                if (amountTexts[i] != null) amountTexts[i].text = "";
+                if (icons[i] != null) icons[i].color = Color.gray;
+            }
+        }
     }
 
-    void ClearSlots()
-    {
-        foreach (var slot in currentHotbarSlots) Destroy(slot);
-        foreach (var slot in currentInventorySlots) Destroy(slot);
-        currentHotbarSlots.Clear();
-        currentInventorySlots.Clear();
-    }
+    // دسترسی برای HotbarSelector
+    public List<GameObject> GetHotbarSlots() => hotbarSlots;
 }

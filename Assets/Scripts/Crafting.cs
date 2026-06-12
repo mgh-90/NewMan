@@ -24,7 +24,7 @@ public class Crafting : MonoBehaviour
         {
             if (hit.collider.CompareTag("CraftingStation"))
             {
-                // هایلایت کراس‌هیر (اختیاری، می‌توانی یک متد مشترک بسازی)
+                // هایلایت کراس‌هیر (اختیاری)
                 if (Input.GetKeyDown(interactKey))
                 {
                     OpenCraftingMenu();
@@ -35,7 +35,14 @@ public class Crafting : MonoBehaviour
 
     void OpenCraftingMenu()
     {
-        Debug.Log("🔧 Crafting menu opened. Inventory contains: " + inventory.items.Count + " items.");
+        // محاسبه تعداد آیتم‌های غیرخالی در اینونتوری
+        int itemCount = 0;
+        foreach (var slot in inventory.slots)
+        {
+            if (slot != null && !string.IsNullOrEmpty(slot.itemName) && slot.amount > 0)
+                itemCount++;
+        }
+        Debug.Log("🔧 Crafting menu opened. Inventory contains: " + itemCount + " items.");
         // بعداً یک UI واقعی باز می‌شود
     }
 }

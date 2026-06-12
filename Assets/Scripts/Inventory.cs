@@ -1,43 +1,78 @@
+﻿using System;
 using UnityEngine;
-using System.Collections.Generic;
+
+[Serializable]
+public class ItemSlot
+{
+    public string itemName;
+    public int amount;
+}
 
 public class Inventory : MonoBehaviour
 {
-    public Dictionary<string, int> items = new Dictionary<string, int>();
+    public ItemSlot[] slots = new ItemSlot[9]; // 9 اسلات هاتبار
 
-    public void AddItem(string itemName, int amount = 1)
+    void Awake()
     {
-        if (items.ContainsKey(itemName))
-            items[itemName] += amount;
-        else
-            items[itemName] = amount;
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] == null) slots[i] = new ItemSlot();
+            slots[i].itemName = "";
+            slots[i].amount = 0;
+        }
+    }
 
-        Debug.Log($"Added {amount}x {itemName}. Total: {items[itemName]}");
+    // اضافه کردن آیتم به اولین اسلات خالی یا هماندازه
+    public bool AddItem(string itemName, int amount = 1)
+    {
+        // ابتدا تلاش برای انباشتن روی اسلات همسان
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].itemName == itemName && slots[i].amount > 0)
+            {
+                slots[i].amount += amount;
+                return true;
+            }
+        }
+        // سپس اولین اسلات خالی
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (string.IsNullOrEmpty(slots[i].itemName) || slots[i].amount == 0)
+            {
+                slots[i].itemName = itemName;
+                slots[i].amount = amount;
+                return true;
+            }
+        }
+        Debug.LogWarning("هیچ اسلات خالی برای آیتم " + itemName + " وجود ندارد");
+        return false;
     }
 
     public bool RemoveItem(string itemName, int amount = 1)
     {
-        if (!items.ContainsKey(itemName) || items[itemName] < amount)
-            return false;
-
-        items[itemName] -= amount;
-        if (items[itemName] == 0)
-            items.Remove(itemName);
-
-        Debug.Log($"Removed {amount}x {itemName}. Remaining: {(items.ContainsKey(itemName) ? items[itemName] : 0)}");
-        return true;
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].itemName == itemName && slots[i].amount >= amount)
+            {
+                slots[i].amount -= amount;
+                if (slots[i].amount == 0) slots[i].itemName = "";
+                return true;
+            }
+        }
+        return false;
     }
 
     public int GetItemCount(string itemName)
     {
-        return items.ContainsKey(itemName) ? items[itemName] : 0;
+        int total = 0;
+        for (int i = 0; i < slots.Length; i++)
+            if (slots[i].itemName == itemName) total += slots[i].amount;
+        return total;
     }
 
-    public void ListItems()
+    public ItemSlot GetSlot(int index)
     {
-        string list = "Inventory: ";
-        foreach (var kvp in items)
-            list += $"{kvp.Key} x{kvp.Value} ";
-        Debug.Log(list);
+        if (index >= 0 && index < slots.Length) return slots[index];
+        return null;
     }
 }

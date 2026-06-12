@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 using System.Text.RegularExpressions; // برای پاک کردن پسوندها
 
 public class HeldItem : MonoBehaviour
@@ -28,11 +27,16 @@ public class HeldItem : MonoBehaviour
         if (hotbarSelector == null || inventory == null) return;
 
         int selected = hotbarSelector.selectedSlot;
-        var itemsList = new List<KeyValuePair<string, int>>(inventory.items);
-        if (selected < itemsList.Count)
+        if (selected == -1)
         {
-            string rawItemName = itemsList[selected].Key;
-            ShowItem(rawItemName);
+            HideItem();  // هیچ آیتمی در دست نباشد
+            return;
+        }
+
+        ItemSlot slot = inventory.GetSlot(selected);
+        if (slot != null && !string.IsNullOrEmpty(slot.itemName) && slot.amount > 0)
+        {
+            ShowItem(slot.itemName);
         }
         else
         {
